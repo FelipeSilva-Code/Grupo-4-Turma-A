@@ -47,8 +47,8 @@ public class ProjetoIntegradorRpg {
         
         exibeCarta(carta);
                       
-        exibeTexto("Lakaka: Parece que o vovo montou uma aventura para nós. Vamos dar uma olhada no mapa e ver para onde essas coordenadas nos levam");
-        exibeTexto("Hmmm, de acordo com o mapa essas coordenadas nos levam até a ilha de Bali. Pegue apenas os itens essenciais enquanto eu preparo o barco. Parece que temos uma aventura para iniciar");
+        exibeTexto("Lakaka: Parece que o vovô montou uma aventura para nós. Vamos dar uma olhada no mapa e ver para onde essas coordenadas nos levam");
+        exibeTexto("De acordo com o mapa essas coordenadas nos levam até a ilha de Bali. Pegue apenas os itens essenciais enquanto eu preparo o barco. Parece que temos uma aventura para iniciar");
 
         exibeCapitulo("Capitulo 2 - A ilha de Bali");
 
@@ -85,9 +85,10 @@ public class ProjetoIntegradorRpg {
         
         exibeTexto("Lakaka: Finalmente chegamos, mas parece que alguem já está nos esperando novamente");
         exibeTexto("Sombra da Subtração: Bem vindo Lakaka. Aguardava ansiosamente vossa chegada. Eu sou a Sombra da Subtração, e fui encarregado de lhes passar um desafio.");
-        exibeDesafio("Se acertarem com exito, tenho algo para lhes entregar. Mas primeiro vocês precisam deixar os números hexadecimais B4 e F7 em decimal e, em seguida, realize a subtração entre eles", "75");
-        exibeTexto("Sombra da Subtração: Parabéns Lakaka e " + nome + ". Vocês acertaram. Aqui a carta escrita por seu avô");
-        
+        exibeDesafio("Se acertarem com êxito, tenho algo para lhes entregar. Mas primeiro, vocês precisam deixar os números hexadecimais F7 e B4 em decimal e, em seguida, realize a subtração entre eles.", "67");
+        exibeTexto("Sombra da Subtração:Excelente trabalho! Vocês foram dignos do desafio. Aqui está o artefato prometido e que vossas próximas jornadas sejam tão desafiadoras quanto esta. Boa sorte!");
+        exibeTexto("Lakaka: Venha " + nome + " vamos dar uma olhada no que tem na carta." );
+
         String[] carta3 = {
             " ____________________________________________",
             "/                                             \\",
@@ -105,14 +106,14 @@ public class ProjetoIntegradorRpg {
         };  
         
         exibeCarta(carta3);
-        exibeTexto("Lakaka: O vovo nos passou mais um desafio. Pegue o mapa pra mim, por favor");
+        exibeTexto("Lakaka: O vovô nos passou mais um desafio. Pegue o mapa pra mim, por favor");
         exibeTexto("Hmmmm parece que agora nosso destino é a ilha de Sumatra. Se ajeite que ja iremos partir para o proximo desafio");
         
         exibeCapitulo("Capitulo 4 - Sumatra");
 
         exibeTexto("Lakaka: Finalmente. Depois de um dia no barco chegamos em Sumatra.");
         exibeTexto("Caçador da Multiplicação: Até que enfim vocês chegaram. Não aguentava mais esperar por voces.");   
-        exibeTexto("Lakaka: Deixa eu advinhar. Você é um amigo do vovo que quer me passar um desafio");
+        exibeTexto("Lakaka: Deixa eu advinhar. Você é um amigo do vovô que quer me passar um desafio");
         exibeTexto("Caçador da Multiplicação: Muito bem, parece que já estão cientes de como isso vai funcionar.");                                                                                                                                                                                                                                             
         exibeDesafio("Então vamos direto ao ponto. Converta os números 2F e A para decimal, e depois realize a multiplicação entre eles", "470");
         exibeTexto("Caçador da Multiplicação: Resposta correta. Tome esse pergaminho deixado por seu avô");   
@@ -137,13 +138,13 @@ public class ProjetoIntegradorRpg {
 
         exibeCapitulo("Capitulo 5 - O desafio final");
 
-        exibeTexto("Lakaka: Chegamos em Bornéu e parece que mais um amigo do vovo esta no esperando.");
-        exibeTexto("Fantasma da Divisão: Sejam bem vindos meus convidados. Voces chegaram ao desafio final. Se responderem corretamente o meu desafio, lhes darei esse baú que pertence ao seu avo. Nele voces encontraram todo o necessario para a proxima aventura.");     
-        exibeDesafio("Mas para isso, transforme os números A5 e B para decimal e depois realize a divisão entre eles", "3");
-        exibeTexto("Fantasma da Divisão: Muito bem. Voces acertaram. Aqui está o baú de seu avo");
+        exibeTexto("Lakaka: Chegamos em Bornéu e parece que mais um amigo do vovô esta no esperando.");
+        exibeTexto("Fantasma da Divisão: Sejam bem vindos meus convidados. Vocês chegaram ao desafio final. Se responderem corretamente o meu desafio, lhes darei esse baú que pertence ao seu avô. Nele vocês encontrarão tudo o que é necessário para a próxima aventura.");     
+        exibeDesafio("Mas para isso, transforme os números A5 e B para decimal e depois realize a divisão entre eles", "15");
+        exibeTexto("Fantasma da Divisão: Muito bem. Voces acertaram. Aqui está o baú de seu avô");
         
-        exibeTexto("Lakaka: Vamos abrir o bau " + nome + ". " );
-        exibeTexto("Tem muitas coisas aqui dentro. Mas olha, mais uma carta deixada pelo vovo. Vamos ver o que tem nela");
+        exibeTexto("Lakaka: Vamos abrir o baú " + nome + ". " );
+        exibeTexto("Tem muitas coisas aqui dentro. Mas olha, mais uma carta deixada pelo vovô. Vamos ver o que tem nela");
         String[] carta5 = {
             " _________________________________________________",
             "/                                                   \\",
@@ -170,6 +171,62 @@ public class ProjetoIntegradorRpg {
         exibeTexto("Vamos em busca de encontrar o Grande Tesouro, mas isso vai ficar para o próximo semestre.");
     }
     
+
+    public static void menu() throws Exception
+    {
+        Scanner scanner = new Scanner(System.in);
+        
+        boolean isContinuarJogo = false;
+        do {
+            exibeTexto("******* MENU *******");
+            exibeTexto("Seja bem vindo abordo nessa viagem. Escolha abaixo qual opção deseja realizar");
+            exibeTexto("1 - Instruções");
+            exibeTexto("2 - Jogar");
+            exibeTexto("3 - Créditos");
+            exibeTexto("4 - Sair");
+            System.out.print("Digite: ");
+            int n = scanner.nextInt();
+        
+            switch (n) {
+                case 1:
+                    exibirInstrucoes();
+                    break;
+                case 2:
+                    isContinuarJogo = true;
+                    break;
+                case 3:
+                    exibirCriadores(); 
+                    break;
+                case 4:
+                    encerrarPrograma(); 
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } while (!isContinuarJogo); 
+    }
+
+    public static void exibirInstrucoes() throws Exception
+    {
+        exibeTexto("Esse é o jogo Temple Of Number's. Nele você vai acompanhar o Lakaka, um jovem destemido em uma aventura pelos mares.");
+    }
+
+    public static void exibirCriadores() throws Exception
+    {
+        exibeTexto("Os criadores do jogo Temple Of Number's são:");
+        exibeTexto("Deivid Duarte");
+        exibeTexto("Diego de Souza");
+        exibeTexto("Felipe Conceicao");
+        exibeTexto("Nicolas Passos");
+    }
+
+    public static void encerrarPrograma()
+    {
+        System.out.println("Saindo.....");
+        System.exit(0);
+    }
+
+
     public static void exibeTexto(String mensagem) throws InterruptedException
     {   
         TimeUnit timeUnit = TimeUnit.MILLISECONDS;
@@ -180,7 +237,6 @@ public class ProjetoIntegradorRpg {
         }
         
         System.out.println("");
-
     }
 
     public static void exibeCapitulo(String texto)
@@ -190,34 +246,54 @@ public class ProjetoIntegradorRpg {
         pulaLinha();
     }
     
-    public static void menu() throws Exception
+     public static void exibeCarta(String[] carta)
     {
-        Scanner scanner = new Scanner(System.in);
+        pulaLinha();
         
-        boolean isContinuarJogo = false;
-        do {
-            exibeTexto("******* MENU *******");
-            exibeTexto("Seja bem vindo abordo nessa viagem");
-            exibeTexto("Se estiver preparado para iniciar tecle 1; Se deseja sair tecle 2; Para saber sobre os criadores tecle 3.");
-            System.out.print("Digite: ");
-            int n = scanner.nextInt();
+        for (String linha : carta) {
+            System.out.println(linha);
+        }
         
-            switch (n) {
-                case 1:
-                    isContinuarJogo = true;
-                    break;
-                case 2:
-                    encerrarPrograma();
-                    break;
-                case 3:
-                    exibirCriadores(); 
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-            }
-        } while (!isContinuarJogo); 
+        pulaLinha();   
     }
     
+    public static void pulaLinha()
+    {
+        System.out.println("");
+    }
+
+    public static String usuarioDigita()
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite: ");
+        String texto = scanner.next();
+        return texto;
+    }
+    
+    public static void exibeDesafio(String desafio, String respostaCorreta)
+    {    
+        System.out.println(desafio);
+        boolean respostaDesafio = false;
+        
+        do {
+            
+            String respostaUsuario = usuarioDigita();
+            
+            if(respostaCorreta.equalsIgnoreCase(respostaUsuario))
+            {
+                respostaDesafio = true;
+                pulaLinha();
+            }
+            else
+            {
+               pulaLinha();
+               removeVida(); 
+            }
+           
+        } while (!respostaDesafio);
+
+    }
+
     public static void removeVida()
     {
         totVidas--;
@@ -237,68 +313,4 @@ public class ProjetoIntegradorRpg {
             System.out.println("Resposta errada, " + nome  +". Você ainda possui mais duas tentativas");
         }
     }
-    
-    public static void exibeDesafio(String desafio, String respostaCorreta)
-    {    
-        System.out.println(desafio);
-        boolean respostaDesafio = false;
-        
-        do {
-            
-            String respostaUsuario = usuarioDigita();
-            
-            if(respostaCorreta.equalsIgnoreCase(respostaUsuario))
-            {
-                respostaDesafio = true;
-                System.out.println("");
-            }
-            else
-            {
-               System.out.println("");
-               removeVida(); 
-            }
-           
-        } while (!respostaDesafio);
-
-    }
-    
-    public static String usuarioDigita()
-    {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite: ");
-        String texto = scanner.next();
-        return texto;
-    }
-    
-    public static void exibirCriadores() throws Exception
-    {
-        exibeTexto("Os criadores do jogo Temple Of Number's são:");
-        exibeTexto("Deivid Duarte");
-        exibeTexto("Diego de Souza");
-        exibeTexto("Felipe Conceicao");
-        exibeTexto("Nicolas Passos");
-    }
-    
-    public static void encerrarPrograma()
-    {
-        System.out.println("Saindo.....");
-        System.exit(0);
-    }
-    
-    public static void exibeCarta(String[] carta)
-    {
-        pulaLinha();
-        
-        for (String linha : carta) {
-            System.out.println(linha);
-        }
-        
-        pulaLinha();   
-    }
-    
-    public static void pulaLinha()
-    {
-        System.out.println("");
-    }
-    
 }

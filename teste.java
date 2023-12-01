@@ -9,14 +9,16 @@ public class teste {
         TestarRemoverVida();
     }
     
+    //ESSE TESTE REMOVE UMA VIDA DO PERSONAGEM E VERIFICA SE A VIDA REALMENTE ABAIXOU (DEVE TER IDO PARA 2)
     public static void TestarRemoverVida()
     {
-
         ProjetoIntegradorRpg.removeVida();
 
-        if(ProjetoIntegradorRpg.totVidas == 2)
-            System.out.println("Passou");
+        int valorEsperado = 2;
+
+        if(ProjetoIntegradorRpg.totVidas == valorEsperado)
+            System.out.println("Passou no teste!");
         else
-            System.out.println("Não passou");
+            System.out.println("Não passou no teste!");
     }
 }
