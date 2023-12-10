@@ -1,5 +1,6 @@
 package projetointegradorrpg;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -8,11 +9,13 @@ public class ProjetoIntegradorRpg {
 
     public static String nome;
     public static int totVidas = 3;
+    public static int timeTexto;
     
     public static void main(String[] args) throws Exception {
-       
+        setTimeTexto();
         menu();
 
+        String[] vetorPerguntas = adicionaPerguntas();
         pulaLinha();
         
         exibeTexto("Lakaka: Seja bem-vindo meu companheiro (a), eu sou o Lakaka. Para começarmos nossa aventura, precisamos que se apresente, me diga qual o seu nome");
@@ -25,7 +28,7 @@ public class ProjetoIntegradorRpg {
         exibeTexto("Ele me instruiu a buscar o presente, usar seu barco e seguir um mapa para descobrir o legado de suas histórias. O vovô expressou seu amor e confiança em mim, pedindo desculpas por sua ausência e garantindo que as aventuras agora seriam minhas");
         exibeTexto("Apesar de abalado, mantive a fé e corri para casa em busca do presente mencionado. Ao encontrá-lo, notei que estava um pouco empoeirado e havia um cadeado, que só seria aberto com a combinação correta. Sobre a caixa tem um papel colado com os seguintes números e letras E4F6");
         
-        exibeDesafio("Me parece um número em haxadecimal " + nome +  ". Converta E4F6 para decimal e vamos tentar colocar o resultado no cadeado", "58614");
+        exibeDesafio("Me parece um número em haxadecimal " + nome +  ". Converta E4F6 para decimal e vamos tentar colocar o resultado no cadeado", vetorPerguntas[0]);
         
         exibeTexto("Lakaka: Parabéns " + nome + " era isso mesmo. Vamos abrir e ver o que tem aqui. Hmm tem uma carta, um mapa e uma bússola. Vamos dar uma olhada no que está escrito na carta");
 
@@ -56,7 +59,7 @@ public class ProjetoIntegradorRpg {
         exibeTexto("Guardião da Soma: Olha se não é o famoso Lakaka. Eu ja espero a sua chegada a um tempo.");  
         exibeTexto("Lakaka: Quem é você e como você sabe meu nome?");
         exibeTexto("Guardião da Soma: Hmmm podemos dizer que eu sou um velho conhecido de seu avo. Ele me incubiu da missao de lhe entregar uma carta, mas primeiro você precisa decifar um código");
-        exibeDesafio("É necessário que vocês transformem os números 3F e A7 de hexadecimal para decimal, e depois realize a soma entre eles", "230");
+        exibeDesafio("É necessário que vocês transformem os números 3F e A7 de hexadecimal para decimal, e depois realize a soma entre eles", vetorPerguntas[1]);
         
         exibeTexto("Guardião da Soma: Vocês conseguiram! Minha missão aqui acabou. Pegue essa carta que seu avô pediu para lhe entregar");
         
@@ -85,7 +88,7 @@ public class ProjetoIntegradorRpg {
         
         exibeTexto("Lakaka: Finalmente chegamos, mas parece que alguem já está nos esperando novamente");
         exibeTexto("Sombra da Subtração: Bem vindo Lakaka. Aguardava ansiosamente vossa chegada. Eu sou a Sombra da Subtração, e fui encarregado de lhes passar um desafio.");
-        exibeDesafio("Se acertarem com êxito, tenho algo para lhes entregar. Mas primeiro, vocês precisam deixar os números hexadecimais F7 e B4 em decimal e, em seguida, realize a subtração entre eles.", "67");
+        exibeDesafio("Se acertarem com êxito, tenho algo para lhes entregar. Mas primeiro, vocês precisam deixar os números hexadecimais F7 e B4 em decimal e, em seguida, realize a subtração entre eles.", vetorPerguntas[2]);
         exibeTexto("Sombra da Subtração:Excelente trabalho! Vocês foram dignos do desafio. Aqui está o artefato prometido e que vossas próximas jornadas sejam tão desafiadoras quanto esta. Boa sorte!");
         exibeTexto("Lakaka: Venha " + nome + " vamos dar uma olhada no que tem na carta." );
 
@@ -115,7 +118,7 @@ public class ProjetoIntegradorRpg {
         exibeTexto("Caçador da Multiplicação: Até que enfim vocês chegaram. Não aguentava mais esperar por voces.");   
         exibeTexto("Lakaka: Deixa eu advinhar. Você é um amigo do vovô que quer me passar um desafio");
         exibeTexto("Caçador da Multiplicação: Muito bem, parece que já estão cientes de como isso vai funcionar.");                                                                                                                                                                                                                                             
-        exibeDesafio("Então vamos direto ao ponto. Converta os números 2F e A para decimal, e depois realize a multiplicação entre eles", "470");
+        exibeDesafio("Então vamos direto ao ponto. Converta os números 2F e A para decimal, e depois realize a multiplicação entre eles", vetorPerguntas[3]);
         exibeTexto("Caçador da Multiplicação: Resposta correta. Tome esse pergaminho deixado por seu avô");   
 
         String[] carta4 = {
@@ -140,7 +143,7 @@ public class ProjetoIntegradorRpg {
 
         exibeTexto("Lakaka: Chegamos em Bornéu e parece que mais um amigo do vovô esta no esperando.");
         exibeTexto("Fantasma da Divisão: Sejam bem vindos meus convidados. Vocês chegaram ao desafio final. Se responderem corretamente o meu desafio, lhes darei esse baú que pertence ao seu avô. Nele vocês encontrarão tudo o que é necessário para a próxima aventura.");     
-        exibeDesafio("Mas para isso, transforme os números A5 e B para decimal e depois realize a divisão entre eles", "15");
+        exibeDesafio("Mas para isso, transforme os números A5 e B para decimal e depois realize a divisão entre eles", vetorPerguntas[4]);
         exibeTexto("Fantasma da Divisão: Muito bem. Voces acertaram. Aqui está o baú de seu avô");
         
         exibeTexto("Lakaka: Vamos abrir o baú " + nome + ". " );
@@ -172,6 +175,7 @@ public class ProjetoIntegradorRpg {
     }
     
 
+    //Função que exibe o menu para o usuario, de forma que só permite ele sair caso aperte para sair ou para iniciar o jogo
     public static void menu() throws Exception
     {
         Scanner scanner = new Scanner(System.in);
@@ -206,6 +210,7 @@ public class ProjetoIntegradorRpg {
         } while (!isContinuarJogo); 
     }
 
+    
     public static void exibirInstrucoes() throws Exception
     {
         exibeTexto("Esse é o jogo Temple Of Number's. Nele você vai acompanhar o Lakaka, um jovem destemido em uma aventura pelos mares.");
@@ -227,18 +232,29 @@ public class ProjetoIntegradorRpg {
     }
 
 
+    //Funcao para exibição do texto para o usuario, nele contem um timeUnit.sleep a fim de que as letras não apareceçam de uma vez para o usuario
     public static void exibeTexto(String mensagem) throws InterruptedException
     {   
         TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 
         for (char caractere : mensagem.toCharArray()) {
             System.out.print(caractere);
-            timeUnit.sleep(05);
+            timeUnit.sleep(timeTexto);
         }
         
         System.out.println("");
     }
 
+
+    //Implementação de uma função que utiliza random, que era uma das implementações obrigatórias
+    public static void setTimeTexto()
+    {
+        Random random = new Random();
+        int numeroAleatorio = random.nextInt(6); // Gera números de 0 a 5
+        timeTexto = numeroAleatorio;
+    }
+
+    //Função que exibe o capitulo, colocando astericos no começo e no final da frase
     public static void exibeCapitulo(String texto)
     {   
         pulaLinha();
@@ -246,6 +262,7 @@ public class ProjetoIntegradorRpg {
         pulaLinha();
     }
     
+    //Função para a exibição das cartas deixadas pelo avô
      public static void exibeCarta(String[] carta)
     {
         pulaLinha();
@@ -257,6 +274,7 @@ public class ProjetoIntegradorRpg {
         pulaLinha();   
     }
     
+    //Função que pula linha
     public static void pulaLinha()
     {
         System.out.println("");
@@ -270,6 +288,7 @@ public class ProjetoIntegradorRpg {
         return texto;
     }
     
+    //Função que exibe o desafio para o usuario, recebe a resposta e ja verifica se a resposta esta correta
     public static void exibeDesafio(String desafio, String respostaCorreta)
     {    
         System.out.println(desafio);
@@ -294,6 +313,7 @@ public class ProjetoIntegradorRpg {
 
     }
 
+    //Função que remove a vida do personagem em caso de erro
     public static void removeVida()
     {
         totVidas--;
@@ -312,5 +332,20 @@ public class ProjetoIntegradorRpg {
         {
             System.out.println("Resposta errada, " + nome  +". Você ainda possui mais duas tentativas");
         }
+    }
+
+
+    // Função que contem um array para as respostas. Uma vez que a utilização de array era obrigatória
+    public static String[] adicionaPerguntas()
+    {
+        String[] respostas = new String[5]; 
+
+        respostas[0] = "58614";
+        respostas[1] = "230";
+        respostas[2] = "67";
+        respostas[3] = "470";
+        respostas[4] = "15";
+
+        return respostas;
     }
 }
